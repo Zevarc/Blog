@@ -39,19 +39,6 @@
         "projects": [
             {
                 "id": 1,
-                "title": "Bored to space",
-                "description": "Website to kill your boredom",
-                "image": "/projects/boredto.png",
-                "tags": [
-                    "Next",
-                    "Fun"
-                ],
-                "link": "https://boredto.space",
-                "featured": true,
-                "status": "live"
-            },
-            {
-                "id": 2,
                 "title": "FastAir",
                 "description": "Android application to transfer files between devices",
                 "image": "/projects/fastair.png",
@@ -60,6 +47,35 @@
                     "WIFI P2P"
                 ],
                 "link": "https://github.com/owlbitdev/fastair",
+                "featured": true,
+                "status": "live"
+            },
+            ,
+            {
+                "id": 2,
+                "title": "GuessNew",
+                "description": "Discover the Fun in Guessing",
+                "image": "/projects/guessnew.png",
+                "tags": [
+                    "Fun",
+                    "Bored",
+                    "Game"
+                ],
+                "link": "https://guessnew.com",
+                "featured": true,
+                "status": "live"
+            },
+             {
+                "id": 3,
+                "title": "BoredIsland",
+                "description": "Play Free Online Games & Instant Fun",
+                "image": "/projects/boredisland.svg",
+                "tags": [
+                    "Fun",
+                    "Bored",
+                    "Game"
+                ],
+                "link": "https://boredisland.com",
                 "featured": true,
                 "status": "live"
             }

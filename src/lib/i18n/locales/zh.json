@@ -39,19 +39,6 @@
         "projects": [
             {
                 "id": 1,
-                "title": "Bored to space",
-                "description": "消磨时间的地方",
-                "image": "/projects/boredto.png",
-                "tags": [
-                    "Next",
-                    "Fun"
-                ],
-                "link": "https://boredto.space",
-                "featured": true,
-                "status": "live"
-            },
-            {
-                "id": 2,
                 "title": "快传",
                 "description": "在无网络的情况下快速传输文件的Android应用",
                 "image": "/projects/fastair.png",
@@ -60,6 +47,34 @@
                     "WIFI P2P"
                 ],
                 "link": "https://github.com/owlbitdev/fastair",
+                "featured": true,
+                "status": "live"
+            },
+            {
+                "id": 2,
+                "title": "GuessNew",
+                "description": "看图猜内容，猜猜特效下面的图片内容是什么",
+                "image": "/projects/guessnew.png",
+                "tags": [
+                    "有趣",
+                    "无聊",
+                    "游戏"
+                ],
+                "link": "https://guessnew.com",
+                "featured": true,
+                "status": "live"
+            },
+             {
+                "id": 3,
+                "title": "BoredIsland",
+                "description": "你无聊时的梦想乐园，让你逃离现实，享受游戏带来的宁静",
+                "image": "/projects/boredisland.svg",
+                "tags": [
+                    "有趣",
+                    "无聊",
+                    "游戏"
+                ],
+                "link": "https://boredisland.com",
                 "featured": true,
                 "status": "live"
             }
