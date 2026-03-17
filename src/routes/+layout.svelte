@@ -1,5 +1,6 @@
 <script>
   import { onNavigate } from '$app/navigation';
+  import favicon from '$lib/assets/favicon.svg'
   import '../styles/main.css';
   
   // 页面过渡动画
@@ -15,7 +16,9 @@
   });
 </script>
 
-<slot />
+<svelte:head>
+		<link rel="icon" href={favicon} type="image/svg+xml" />
+</svelte:head>
 
 <style>
   /* 页面过渡 */
