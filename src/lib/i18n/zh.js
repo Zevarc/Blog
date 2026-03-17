@@ -4,15 +4,14 @@ export const zh = {
     home: '首页',
     blog: '博客',
     projects: '项目',
-    about: '关于',
     language: 'English'
   },
   hero: {
     title: 'Zevarc',
-    phonetic: '/ziːvɑːrk/',
+    phonetic: '/ˈziː.vɑːrk/',
     etymology: {
       zero: 'Zero（零）',
-      evolution: 'Evolution（演进）', 
+      evolution: 'Evolution（演进）',
       arc: 'Arc（弧线）'
     },
     slogan: '从0开始，曲折演进，收获成长和快乐',
@@ -25,7 +24,33 @@ export const zh = {
     title: '知识的港湾',
     subtitle: '在这里停泊，补充能量',
     readMore: '阅读全文 →',
-    next: '前往码头'
+    next: '前往码头',
+    posts: [
+      {
+        id: 1,
+        title: 'Hello World：Zevarc 的诞生',
+        date: '2024-03-01',
+        excerpt: '为什么要打造以“演进”为核心的个人品牌？这篇文章讲述 Zevarc 的诞生和核心理念。',
+        url: '#',
+        tags: ['Android', 'C++', 'Python', '前端']
+      },
+      {
+        id: 2,
+        title: '问题拆解的艺术：从复杂到简单',
+        date: '2024-03-10',
+        excerpt: '面对复杂问题，如何拆解为可解的小块？分享我常用的拆解思路。',
+        url: '#',
+        tags: ['思维', '方法论', '问题解决']
+      },
+      {
+        id: 3,
+        title: '这个网站怎么搭的：技术选型与日出动画',
+        date: '2024-03-15',
+        excerpt: '总结从零搭建个人网站的过程，包括 Svelte 5 的体验和日出动画的实现。',
+        url: '#',
+        tags: ['Svelte', 'Web', '笔记']
+      }
+    ]
   },
   projects: {
     station: '第二站',
@@ -33,7 +58,20 @@ export const zh = {
     subtitle: '在这里装载，出发远方',
     problem: '问题',
     solution: '方案',
-    next: '了解更多'
+    next: '了解更多',
+    projects: [{
+      "id": 1,
+      "title": "快传",
+      "year": "2017",
+      "description": "在无网络的情况下快速传输文件的Android应用",
+      "image": "/projects/fastair.png",
+      "tags": [
+        "Android",
+        "WIFI P2P"
+      ],
+      "link": "https://github.com/zevarc/fastair",
+    }
+    ]
   },
   about: {
     title: '关于 Zevarc',

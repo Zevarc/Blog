@@ -9,7 +9,7 @@ export const en = {
   },
   hero: {
     title: 'Zevarc',
-    phonetic: '/ziːvɑːrk/',
+    phonetic: '/ˈziː.vɑːrk/',
     etymology: {
       zero: 'Zero',
       evolution: 'Evolution', 
@@ -25,7 +25,33 @@ export const en = {
     title: 'Harbor of Knowledge',
     subtitle: 'Dock here to recharge',
     readMore: 'Read More →',
-    next: 'Go to Dock'
+    next: 'Go to Dock',
+    posts: [
+      {
+        id: 1,
+        title: 'Hello World: The Birth of Zevarc',
+        date: '2024-03-01',
+        excerpt: 'Why create a personal brand around evolution? This post shares the origin and core ideas of Zevarc.',
+        url: '#',
+        tags: ['Android', 'C++', 'Python', 'Frontend']
+      },
+      {
+        id: 2,
+        title: 'The Art of Decomposition: From Complex to Simple',
+        date: '2024-03-10',
+        excerpt: 'Feeling stuck with complex problems? Here is my approach to breaking them into solvable pieces.',
+        url: '#',
+        tags: ['Thinking', 'Methodology', 'Problem Solving']
+      },
+      {
+        id: 3,
+        title: 'Building This Site: Tech Choices & Sunrise Animation',
+        date: '2024-03-15',
+        excerpt: 'A short write-up on how the site was built with Svelte 5 and the sunrise visual.',
+        url: '#',
+        tags: ['Svelte', 'Web', 'Notes']
+      }
+    ]
   },
   projects: {
     station: 'Second Station',

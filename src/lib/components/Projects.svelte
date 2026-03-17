@@ -4,53 +4,7 @@
   let visible = $state(false);
   let sectionEl;
 
-  const projects = [
-    {
-      id: 1,
-      title: '智能任务管理系统',
-      year: '2024',
-      problem: '团队协作效率低下，任务分配混乱，无法追踪项目进度',
-      decomposition: [
-        '将「任务管理」拆解为：创建、分配、执行、验收、归档',
-        '识别核心实体：任务、用户、团队、项目',
-        '设计状态流转图：待处理 → 进行中 → 待验收 → 已完成'
-      ],
-      solution: '基于状态机的任务流转系统，支持自定义工作流',
-      techStack: ['React', 'Node.js', 'PostgreSQL', 'WebSocket'],
-      demoUrl: '#',
-      sourceUrl: '#'
-    },
-    {
-      id: 2,
-      title: '数据可视化分析平台',
-      year: '2023',
-      problem: '海量业务数据无法直观理解，报表制作耗时，数据孤岛严重',
-      decomposition: [
-        '将「数据可视化」拆解为：数据源 → 清洗 → 聚合 → 渲染',
-        '设计模块化图表组件：折线图、柱状图、饼图、地图',
-        '建立数据管道：ETL → Data Warehouse → API Layer'
-      ],
-      solution: '拖拽式报表生成器，支持50+可视化组件',
-      techStack: ['Vue.js', 'D3.js', 'Python', 'Airflow', 'Redshift'],
-      demoUrl: '#',
-      sourceUrl: '#'
-    },
-    {
-      id: 3,
-      title: '个人知识管理系统',
-      year: '2023',
-      problem: '学习资料散落各处，无法建立知识连接，检索效率低',
-      decomposition: [
-        '将「知识管理」拆解为：收集 → 整理 → 连接 → 输出',
-        '设计双向链接机制：原子笔记 ↔ 主题笔记',
-        '建立自动标签系统和智能推荐算法'
-      ],
-      solution: '支持双向链接的个人数字花园',
-      techStack: ['Svelte', 'Electron', 'SQLite', 'Markdown'],
-      demoUrl: '#',
-      sourceUrl: '#'
-    }
-  ];
+  let { projects, labels } = $props();
 
   onMount(() => {
     const observer = new IntersectionObserver(
@@ -91,25 +45,25 @@
                 <polyline points="15 3 21 3 21 9"/>
                 <line x1="10" y1="14" x2="21" y2="3"/>
               </svg>
-              Demo
+              {labels.demo}
             </a>
             <a href={project.sourceUrl} class="project-link" target="_blank" rel="noopener">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
               </svg>
-              Code
+              {labels.code}
             </a>
           </div>
         </div>
 
         <div class="project-body">
           <div class="problem-section">
-            <span class="label">Problem</span>
+            <span class="label">{labels.problem}</span>
             <p>{project.problem}</p>
           </div>
 
           <div class="decomposition-section">
-            <span class="label">Decomposition</span>
+            <span class="label">{labels.decomposition}</span>
             <ul class="decomposition-list">
               {#each project.decomposition as step}
                 <li>{step}</li>
@@ -118,7 +72,7 @@
           </div>
 
           <div class="solution-section">
-            <span class="label">Solution</span>
+            <span class="label">{labels.solution}</span>
             <p>{project.solution}</p>
           </div>
         </div>
@@ -197,15 +151,16 @@
   }
   
   .project-year {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    color: #F59E0B;
+    font-size: .875rem;
+    color: #fbbf24;
+    font-family: JetBrains Mono, monospace;
+    margin-bottom: 8px;
   }
   
   .project-title {
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: #F9FAFB;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f1f5f9;
     margin: 0;
   }
   
@@ -236,15 +191,15 @@
   
   .label {
     display: inline-block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    color: #F59E0B;
-    background: rgba(245, 158, 11, 0.1);
-    padding: 4px 10px;
+    padding: 4px 12px;
+    background: #38bdf826;
+    color: #38bdf8;
+    font-size: .75rem;
+    font-weight: 600;
     border-radius: 4px;
     margin-bottom: 8px;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: .05em;
   }
   
   .problem-section p,
@@ -291,12 +246,12 @@
   
   .tech-tag {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    color: #6B7280;
-    background: rgba(17, 24, 39, 0.8);
-    padding: 4px 10px;
-    border-radius: 4px;
     border: 1px solid rgba(31, 41, 55, 0.5);
+    padding: 6px 14px;
+    background: #64748b4d;
+    color: #e2e8f0;
+    font-size: .875rem;
+    border-radius: 6px;
   }
   
   @media (max-width: 767px) {

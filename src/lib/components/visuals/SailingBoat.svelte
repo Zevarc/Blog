@@ -5,13 +5,21 @@
    * @prop {string} theme - 主题颜色
    * @prop {boolean} animate - 是否播放驶入动画
    * @prop {number} animationDelay - 动画延迟 (ms)
+   * @prop {boolean} sailOut - 是否播放驶出动画
+   * @prop {string|number} sailOutDistance - 驶出距离（如 '200vw'）
+   * @prop {boolean} rock - 是否摇摆
+   * @prop {number} opacity - 透明度 (0-1)
    */
   
   let { 
     scale = 1,
     theme = 'sunrise',
     animate = false,
-    animationDelay = 300
+    animationDelay = 300,
+    sailOut = false,
+    sailOutDistance = '200vw',
+    rock = true,
+    opacity = 1
   } = $props();
   
   // 主题颜色映射
@@ -28,9 +36,10 @@
 <div 
   class="boat-container"
   class:animate={animate}
-  style="transform: scale({scale}); --boat-color: {color}"
+  class:sail-out={sailOut}
+  style="--boat-scale: {scale}; --boat-color: {color}; --boat-sail-out: {sailOutDistance}; opacity: {opacity}"
 >
-  <svg class="boat" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+  <svg class="boat" class:rocking={rock && !sailOut} viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
     <path d="M20,45 Q50,55 80,45 L75,55 Q50,62 25,55 Z" fill="currentColor" class="boat-hull"/>
     <path d="M50,45 L50,10 Q65,25 50,40 Z" fill="currentColor" class="boat-sail"/>
     <line x1="50" y1="45" x2="50" y2="8" stroke="currentColor" stroke-width="2" class="boat-mast"/>
@@ -42,7 +51,7 @@
     position: absolute;
     bottom: 25%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(var(--boat-scale, 1));
     width: 80px;
     height: 48px;
     z-index: 10;
@@ -54,11 +63,19 @@
     animation-delay: 300ms;
   }
   
+  .boat-container.sail-out {
+    animation: none;
+    transform: translateX(var(--boat-sail-out, 200vw)) scale(var(--boat-scale, 1));
+  }
+  
   .boat {
     width: 100%;
     height: 100%;
-    animation: rock 4s ease-in-out infinite;
     color: var(--boat-color, #0f172a);
+  }
+  
+  .boat.rocking {
+    animation: rock 4s ease-in-out infinite;
   }
   
   .boat-hull,
@@ -93,7 +110,7 @@
   @media (prefers-reduced-motion: reduce) {
     .boat-container.animate {
       animation: none;
-      transform: translateX(-50%);
+      transform: translateX(-50%) scale(var(--boat-scale, 1));
     }
     
     .boat {
