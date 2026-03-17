@@ -1,5 +1,4 @@
 <script>
-  import { onNavigate } from '$app/navigation';
   import favicon from '$lib/assets/favicon.svg'
   import '../styles/main.css';
   
