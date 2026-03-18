@@ -4,16 +4,16 @@
   import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
   import SectionHeader from '$lib/components/SectionHeader.svelte';
   import NavButton from '$lib/components/NavButton.svelte';
-  import BlogList from '$lib/components/blog/BlogList.svelte';
+  import BlogFrame from './BlogFrame.svelte';
   import { Scene, HarborBackground, Moon } from '$lib/components/visuals/index.js';
-  import { getDictionary } from '$lib/i18n/index.js';
+  import { getDictionary,getLink } from '$lib/i18n/index.js';
 
-  const { lang = 'en' } = $props();
+  const { lang = 'en', posts, notes } = $props();
 
   let t = $derived(getDictionary(lang));
   let visible = $state(false);
 
-  const projectsPath = $derived(lang === 'zh' ? '/zh/projects' : '/projects');
+  const projectsPath = $derived(getLink('projects', lang));
 
   onMount(() => {
     const timer = setTimeout(() => {
@@ -30,10 +30,10 @@
 </script>
 
 <svelte:head>
-  <title>{t.seo.blog.title}</title>
-  <meta name="description" content={t.seo.blog.description} />
-  <link rel="alternate" hreflang="en" href="https://zevarc.com/blog" />
-  <link rel="alternate" hreflang="zh-Hans" href="https://zevarc.com/zh/blog" />
+  <title>{t.seo.posts.title}</title>
+  <meta name="description" content={t.seo.posts.description} />
+  <link rel="alternate" hreflang="en" href="https://zevarc.com/posts" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://zevarc.com/zh/posts" />
 </svelte:head>
 
 <div class="page">
@@ -50,12 +50,14 @@
   </Scene>
 
   <main class="content" class:visible={visible}>
-    <SectionHeader station={t.blog.station} title={t.blog.title} subtitle={t.blog.subtitle} />
+    <SectionHeader station={t.posts.station} title={t.posts.title} subtitle={t.posts.subtitle} />
 
-    <BlogList posts={t.blog.posts} readMoreLabel={t.blog.readMore} />
+    <BlogFrame title={t.posts.blogTitle} description={t.posts.blogSubtitle} posts={posts} />
+
+    <BlogFrame title={t.posts.noteTitle} description={t.posts.noteSubtitle} posts={notes} />
 
     <div class="navigation-section">
-      <NavButton href={projectsPath} label={t.blog.next} onClick={handleNext} />
+      <NavButton href={projectsPath} label={t.posts.next} onClick={handleNext} />
     </div>
   </main>
 </div>

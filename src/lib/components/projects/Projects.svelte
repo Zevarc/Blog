@@ -4,7 +4,7 @@
   let visible = $state(false);
   let sectionEl;
 
-  let { projects, labels } = $props();
+  let { projects } = $props();
 
   onMount(() => {
     const observer = new IntersectionObserver(
@@ -39,47 +39,34 @@
             <h3 class="project-title">{project.title}</h3>
           </div>
           <div class="project-links">
+          {#if project.website}
             <a href={project.demoUrl} class="project-link" target="_blank" rel="noopener">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
                 <polyline points="15 3 21 3 21 9"/>
                 <line x1="10" y1="14" x2="21" y2="3"/>
               </svg>
-              {labels.demo}
+              Website
             </a>
-            <a href={project.sourceUrl} class="project-link" target="_blank" rel="noopener">
+            {/if}
+            {#if project.github}
+            <a href={project.github} class="project-link" target="_blank" rel="noopener">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
               </svg>
-              {labels.code}
+              Github
             </a>
+            {/if}
           </div>
         </div>
 
         <div class="project-body">
-          <div class="problem-section">
-            <span class="label">{labels.problem}</span>
-            <p>{project.problem}</p>
-          </div>
-
-          <div class="decomposition-section">
-            <span class="label">{labels.decomposition}</span>
-            <ul class="decomposition-list">
-              {#each project.decomposition as step}
-                <li>{step}</li>
-              {/each}
-            </ul>
-          </div>
-
-          <div class="solution-section">
-            <span class="label">{labels.solution}</span>
-            <p>{project.solution}</p>
-          </div>
+          <p>{project.description}</p>
         </div>
 
         <div class="project-footer">
           <div class="tech-stack">
-            {#each project.techStack as tech}
+            {#each project.tags as tech}
               <span class="tech-tag">{tech}</span>
             {/each}
           </div>

@@ -1,10 +1,7 @@
 <script>
   import { createEventDispatcher } from "svelte";
 
-  export let t;
-  export let topics = [];
-  export let contentVisible = false;
-  export let blogLink;
+  const { t, topics,contentVisible,nextLink } =$props();
 
   const dispatch = createEventDispatcher();
 
@@ -39,7 +36,7 @@
 
   <p class="description">{t.hero.description}</p>
 
-  <a href={blogLink} class="cta-button" on:click|preventDefault={handleExplore}>
+  <a href={nextLink} class="cta-button" on:click|preventDefault={handleExplore}>
     {t.hero.cta}
     <span class="arrow">→</span>
   </a>

@@ -8,51 +8,106 @@
 @import './animations.css';
 
 /* 3. Global Reset & Base */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  border: 0 solid;
   margin: 0;
   padding: 0;
 }
 
 html {
-  font-size: 16px;
+  font-size: clamp(16px, 1.2vw, 18px);
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-break: loose;
+  word-break: break-word;
 }
 
 body {
   font-family: var(--font-sans);
-  line-height: 1.6;
-  color: var(--color-text-primary);
-  background-color: var(--color-bg-dark);
+  color: var(--color-on-surface);
+  background-color: var(--color-surface);
   overflow-x: hidden;
 }
 
 /* 4. Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 h1 {
-  font-size: var(--text-5xl);
+  font-size: 2rem;
+  margin-top: 2.5em;
 }
 
 h2 {
-  font-size: var(--text-4xl);
+  font-size: 1.5rem;
+  margin-top: 2em;
 }
 
 h3 {
-  font-size: var(--text-2xl);
+  font-size: 1.25rem;
+  margin-top: 1.5em;
 }
 
 p {
-  margin-bottom: 1em;
+  margin: 1.2em 0;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+a:hover {
+  border-bottom-color: var(--color-primary);
+}
+
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+pre {
+  margin: 2rem 0;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--color-outline);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+code:not(pre code) {
+  font-size: 0.9em;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  background: var(--color-surface-container);
+}
+
+blockquote {
+  padding: 0.1em 1em;
+  border-left: 3px solid var(--color-outline);
+  background: var(--color-surface-container);
 }
 
 /* 5. Utility Classes */
@@ -81,7 +136,8 @@ button {
   background: none;
 }
 
-input, textarea {
+input,
+textarea {
   font-family: inherit;
 }
 
@@ -97,11 +153,11 @@ input, textarea {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-slate);
+  background: var(--color-outline);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-text-muted);
+  background: var(--color-outline);
   border-radius: 4px;
 }
 
@@ -116,9 +172,13 @@ input, textarea {
 }
 
 /* 10. Print Styles */
-@media print {
+@media (max-width: 768px) {
   body {
-    background: white;
-    color: black;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  article {
+    padding: 0 1rem;
   }
 }

@@ -1,6 +1,6 @@
 <script>
-  import Home from '$lib/components/home/Home.svelte'
+  import HomePage from '$lib/components/home/HomePage.svelte'
   </script>
 
-  <Home lang="en" />
+  <HomePage />
  

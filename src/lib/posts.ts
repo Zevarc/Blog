@@ -1,22 +1,39 @@
-import type { Post, PostMeta, PostRecord } from './types'
-const posts: Post[] = []
-const tags = new Map<string, PostMeta[]>()
+import type { Post, PostRecord } from './types'
+import { getLink } from '$lib/i18n';
 
-const modules: Record<string, PostRecord> = import.meta.glob('/src/content/posts/*.md', { eager: true })
-for (const path in modules) {
-  const post = modules[path]
-  const slug = path?.split('/').pop()?.replace('.md', '');
-  const metadata = post.metadata
-  const content = { component: post.default, ...metadata, slug }
-  !content.draft && posts.push(content)
-}
-posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
-for (const post of posts) {
-  for (const tag of post.tags || []) {
-    if (!tags.has(tag)) tags.set(tag, [])
-    tags.get(tag)?.push(post)
+function handleContent(modules: Record<string, PostRecord>, lang: string|undefined=undefined,basePath: string): Post[] {
+  const posts: Post[] = []
+  for (const path in modules) {
+    const post = modules[path]
+    const fileName = path?.split('/').pop()?.replace('.md', '')??"";
+    const [slug, fileLang] = fileName.split('.') 
+    const metadata = post.metadata
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": metadata.title,
+      "datePublished": metadata.date,
+      "dateModified": metadata.updated,
+      "author": {
+        "@type": "Person",
+        "name": "Zevarc"
+      }
+
+    }
+    const content = { component: post.default, ...metadata, slug,url: `${basePath}/${slug}`, jsonLd }
+    !content.draft &&(!lang || fileLang === lang) && posts.push(content)
   }
+  posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  return posts
 }
 
-export { posts, tags };
+function loadPosts(lang: string|undefined=undefined): Post[] {
+  return handleContent(import.meta.glob('/src/content/posts/*.md', { eager: true }), lang,getLink('posts',lang));
+}
+
+function loadNotes(lang: string|undefined=undefined): Post[] {
+  return handleContent(import.meta.glob('/src/content/notes/*.md', { eager: true }), lang,getLink('posts/notes',lang));
+}
+
+export { loadPosts, loadNotes };

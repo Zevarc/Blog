@@ -2,11 +2,11 @@
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
   import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
-  import HeroContent from './HeroContent.svelte';
+  import Hero from './Hero.svelte';
   import { SunriseBackground, Scene, Sun } from '$lib/components/visuals/index.js';
   import { getDictionary, getLink } from '$lib/i18n/index.js';
 
-  const { lang } = $props();
+  const { lang='en' } = $props();
   let t = $derived(getDictionary(lang));
 
   let progress = $state(0);
@@ -26,7 +26,7 @@
   let seaColorTop = $derived(interpolateColor('#000814', '#0369a1', progress));
   let seaColorBottom = $derived(interpolateColor('#001219', '#0c1929', progress));
 
-  const blogLink = $derived(getLink(lang, 'blog'));
+  const nextLink = $derived(getLink('posts',lang));
 
   function interpolateColor(color1, color2, t) {
     const c1 = hexToRgb(color1);
@@ -92,15 +92,13 @@
 
     await new Promise(resolve => setTimeout(resolve, 800));
 
-    const blogPath = lang === 'zh' ? '/zh/blog' : '/blog';
-    await goto(blogPath);
+    await goto(nextLink);
   }
 </script>
 
 <svelte:head>
   <title>{t.seo.home.title}</title>
   <meta name="description" content={t.seo.home.description} />
-  <meta name="keywords" content="个人品牌,问题解决,技术博客,作品集,演进,Zevarc,Android,C++,Python,前端" />
   <meta property="og:title" content={t.seo.home.title} />
   <meta property="og:description" content={t.seo.home.description} />
   <meta property="og:type" content="website" />
@@ -109,9 +107,6 @@
   <link rel="alternate" hreflang="en" href="https://zevarc.com/" />
   <link rel="alternate" hreflang="zh-Hans" href="https://zevarc.com/zh" />
   <link rel="alternate" hreflang="x-default" href="https://zevarc.com/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </svelte:head>
 
 <LanguageSwitcher />
@@ -132,10 +127,10 @@
     <Sun slot="sky-objects" x={sunX} y={sunY} opacity={sunOpacity} />
   </Scene>
 
-  <HeroContent
-    blogLink={blogLink}
-    contentVisible={contentVisible}
-    t={t}
+  <Hero
+    {nextLink}
+    {contentVisible}
+    {t}
     topics={t.hero.topics}
     on:explore={handleExplore}
   />
@@ -147,10 +142,5 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
-  }
-
-  .sea-layer {
-    position: absolute;
-    inset: 0;
   }
 </style>
