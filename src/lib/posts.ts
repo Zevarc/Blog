@@ -6,11 +6,9 @@ function handleContent(modules: Record<string, PostRecord>, lang: string|undefin
   const posts: Post[] = []
   for (const path in modules) {
     const post = modules[path]
-    if(!post.metadata) continue
     const fileName = path?.split('/').pop()?.replace('.md', '')??"";
     const [slug, fileLang] = fileName.split('.') 
     const metadata = post.metadata
-    console.log(metadata)
     const jsonLd = {
       "@context": "https://schema.org",
       "@type": "TechArticle",

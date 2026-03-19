@@ -3,7 +3,7 @@ title: "How to get the app package name on Android"
 description: "Various ways to get Android application package names, including Android Studio, adb shell pm list package, adb shell top, adb shell dumpsys window"
 date: "2025-03-06"
 updated: "2026-03-18"
-tags:["adb"]
+tags: ["adb"]
 draft: false
 ---
 

@@ -3,7 +3,7 @@ title: "Android上怎么获取到应用包名"
 description: "各种场景下获取Android应用包名的方式，包括Android Studio，adb shell pm list package,adb shell top,adb shell dumpsys window"
 date: "2025-03-06"
 updated: "2026-03-18"
-tags:["ADB","Android"]
+tags: ["ADB","Android"]
 draft: false
 ---
 

@@ -4,7 +4,7 @@
   import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
   import SectionHeader from '$lib/components/SectionHeader.svelte';
   import NavButton from '$lib/components/NavButton.svelte';
-  import BlogFrame from './BlogFrame.svelte';
+  import BlogFrame from './PostFrame.svelte';
   import { Scene, HarborBackground, Moon } from '$lib/components/visuals/index.js';
   import { getDictionary,getLink } from '$lib/i18n/index.js';
 

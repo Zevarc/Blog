@@ -3,7 +3,7 @@ title: "Android JNI开发指南"
 description: "本文介绍了JNI开发中的一些概念，以及怎么将这些概念应用到实际开发中"
 date: "2021-09-12"
 updated: "2026-03-18"
-tags:["Android","JNI","C++"]
+tags: ["Android","JNI","C++"]
 draft: false
 ---
 

@@ -3,7 +3,7 @@ title: "Guide to Android JNI"
 description: "This article introduces some concepts in JNI development and how to apply these concepts in practical development."
 date: "2021-09-12"
 updated: "2026-03-18"
-tags:["Android","JNI","C++"]
+tags: ["Android","JNI","C++"]
 draft: false
 ---
 

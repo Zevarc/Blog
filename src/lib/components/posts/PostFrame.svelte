@@ -1,5 +1,5 @@
 <script>
-import BlogList from "./BlogList.svelte";
+import BlogList from "./PostList.svelte";
     const {title, description,posts} = $props();
 </script>
 <div class="blog-frame">
