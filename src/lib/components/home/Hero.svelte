@@ -6,6 +6,7 @@
   const dispatch = createEventDispatcher();
 
   function handleExplore(event) {
+    event.preventDefault();
     dispatch("explore", event);
   }
 </script>
@@ -36,7 +37,7 @@
 
   <p class="description">{t.hero.description}</p>
 
-  <a href={nextLink} class="cta-button" on:click|preventDefault={handleExplore}>
+  <a href={nextLink} class="cta-button" onclick={handleExplore}>
     {t.hero.cta}
     <span class="arrow">→</span>
   </a>

@@ -6,14 +6,14 @@
   import NavButton from '$lib/components/NavButton.svelte';
   import ProjectsList from '$lib/components/projects/Projects.svelte';
   import { Scene, SunsetBackground } from '$lib/components/visuals/index.js';
-  import { getDictionary } from '$lib/i18n/index.js';
+  import { getDictionary,getLink } from '$lib/i18n/index.js';
 
   const { lang = 'en' } = $props();
 
   let t = $derived(getDictionary(lang));
   let visible = $state(false);
 
-  const nextPath = '/';
+  const nextPath = "en"===lang?"/":"/zh";
 
   onMount(() => {
     const timer = setTimeout(() => {
