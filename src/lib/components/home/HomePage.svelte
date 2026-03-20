@@ -4,7 +4,7 @@
   import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
   import Hero from './Hero.svelte';
   import { SunriseBackground, Scene, Sun } from '$lib/components/visuals/index.js';
-  import { getDictionary, getLink } from '$lib/i18n/index.js';
+  import { getDictionary } from '$lib/i18n/index.js';
 
   const { lang='en' } = $props();
   let t = $derived(getDictionary(lang));
@@ -26,7 +26,7 @@
   let seaColorTop = $derived(interpolateColor('#000814', '#0369a1', progress));
   let seaColorBottom = $derived(interpolateColor('#001219', '#0c1929', progress));
 
-  const nextLink = $derived(getLink('posts',lang));
+  const nextLink = 'posts'
 
   function interpolateColor(color1, color2, t) {
     const c1 = hexToRgb(color1);

@@ -6,14 +6,14 @@
   import NavButton from '$lib/components/NavButton.svelte';
   import BlogFrame from './PostFrame.svelte';
   import { Scene, HarborBackground, Moon } from '$lib/components/visuals/index.js';
-  import { getDictionary,getLink } from '$lib/i18n/index.js';
+  import { getDictionary } from '$lib/i18n/index.js';
 
   const { lang = 'en', posts, notes } = $props();
 
   let t = $derived(getDictionary(lang));
   let visible = $state(false);
 
-  const projectsPath = $derived(getLink('projects', lang));
+  const projectsPath = 'projects';
 
   onMount(() => {
     const timer = setTimeout(() => {

@@ -15,4 +15,5 @@ export const supportedLanguages = ['en', 'zh'];
 export function getLink(path,lang='en') {
      return lang === 'en' ? path : `${lang}/${path}`
 }
+
 export default { dictionaries, getDictionary, supportedLanguages,getLink };

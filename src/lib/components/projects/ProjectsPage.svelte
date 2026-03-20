@@ -13,7 +13,7 @@
   let t = $derived(getDictionary(lang));
   let visible = $state(false);
 
-  const nextPath = $derived(lang === 'zh' ? '/zh' : '/');
+  const nextPath = '/';
 
   onMount(() => {
     const timer = setTimeout(() => {

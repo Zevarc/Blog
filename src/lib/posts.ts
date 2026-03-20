@@ -1,7 +1,6 @@
 import type { Post, PostRecord } from './types'
 import { getLink } from '$lib/i18n';
 
-
 function handleContent(modules: Record<string, PostRecord>, lang: string|undefined=undefined,basePath: string): Post[] {
   const posts: Post[] = []
   for (const path in modules) {
