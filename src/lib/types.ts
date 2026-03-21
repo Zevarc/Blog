@@ -9,7 +9,8 @@ export interface PostMeta {
 }
 
 export interface Post extends PostMeta {
-    slug: string|undefined
+    slug: string
+    lng: string
     component: any
 }
 
