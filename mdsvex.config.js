@@ -1,16 +1,16 @@
-import { defineMDSveXConfig as defineConfig } from 'mdsvex';
+import { defineMDSveXConfig as defineConfig,escapeSvelte } from 'mdsvex';
 import { getSingletonHighlighter } from 'shiki';
 
-const codeHightlighter=getSingletonHighlighter({
+const highlighter=await getSingletonHighlighter({
   themes: ['github-dark','github-light','monokai'],
-  langs: ['javascript', 'typescript', 'svelte', 'css', 'html','jade','kotlin','python','shell','java','cpp']
+  langs: ['javascript', 'typescript', 'svelte', 'css', 'html','jade','kotlin','python','shell','java','cpp','cmake','groovy']
 });
 const config = defineConfig({
   extensions: ['.md'],
 
   highlight: {
     highlighter: async (code, lang) => {
-      const html = (await codeHightlighter).codeToHtml(code, { lang:lang??'text', theme: 'github-light' });
+      const html = escapeSvelte(highlighter.codeToHtml(code, { lang:lang??'text', theme: 'github-light' }));
       return `{@html \`${html}\` }`;
     }
   },
