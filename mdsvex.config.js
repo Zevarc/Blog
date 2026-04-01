@@ -3,7 +3,7 @@ import { getSingletonHighlighter } from 'shiki';
 
 const highlighter=await getSingletonHighlighter({
   themes: ['github-dark','github-light','monokai'],
-  langs: ['javascript', 'typescript', 'svelte', 'css', 'html','jade','kotlin','python','shell','java','cpp','cmake','groovy']
+  langs: ['javascript', 'typescript', 'svelte', 'css', 'html','jade','kotlin','python','shell','java','cpp','cmake','groovy','astro']
 });
 const config = defineConfig({
   extensions: ['.md'],
