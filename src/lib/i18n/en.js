@@ -10,7 +10,7 @@ export const en = {
       arc: 'Arc'
     },
     slogan: 'Start from zero, evolve through twists and turns, and grow with joy',
-    description: 'A place for sharing insights on Android, C++, Python, frontend development, and browser extensions.',
+    description: 'Zevarc explores problem decomposition and iterative evolution, sharing practical insights on Android, C++, Python, and modern frontend development.',
     topics: ['Android', 'C++', 'Python', 'Frontend', 'Browser Extensions'],
     cta: 'Explore'
   },

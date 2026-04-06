@@ -23,7 +23,7 @@ function handleContent(modules: Record<string, PostRecord>, lang: string | undef
     const content = { component: post.default, ...metadata, slug, lng: fileLang, url: `${basePath}/${slug}`, jsonLd }
     !content.draft && (!lang || fileLang === lang) && posts.push(content)
   }
-  posts.sort((a, b) => new Date(b.updated).getTime() - new Date(a.updated).getTime())
+  posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   return posts
 }
 
