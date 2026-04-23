@@ -41,6 +41,18 @@ export const zh = {
         "WIFI P2P"
       ],
       "link": "https://github.com/zevarc/fastair",
+    },
+    {
+      id: 2,
+      title: 'GitHit',
+      year: '2026',
+      description: '随机探索和发现Github仓库和开发者',
+      image: '/projects/fastair.png',
+      tags: [
+        'GitHub',
+        'GitHit'
+      ],
+      website: 'https://githit.zevarc.com'
     }
     ]
   },

@@ -30,7 +30,8 @@ export const en = {
     title: 'Dock of Creations',
     subtitle: 'Load up here, then set sail for the horizon',
     next: 'Go home',
-    projects: [{
+    projects: [
+      {
       id: 1,
       title: 'FastAir',
       year: '2017',
@@ -40,8 +41,20 @@ export const en = {
         'Android',
         'WiFi P2P'
       ],
-      link: 'https://github.com/zevarc/fastair',
-    }]
+      link: 'https://github.com/zevarc/fastair'},
+      {
+      id: 2,
+      title: 'GitHit',
+      year: '2026',
+      description: 'Discover Random GitHub Repositories & Developers',
+      image: '/projects/fastair.png',
+      tags: [
+        'GitHub',
+        'GitHit'
+      ],
+      website: 'https://githit.zevarc.com'
+    }
+  ]
   },
   footer: {
     title: 'Progress Brings Me Joy',
