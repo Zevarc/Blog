@@ -104,7 +104,7 @@ android {
 
 After creation, Android Studio will prompt you to sync the project at the bottom of the file tab. After clicking `Sync Now` and syncing completes, you can find the `Build Variants` tool window in the sidebar. At this point, you'll see an additional `alpha` build option in `Active Build Variant`.
 
-![build variant preview](/static/images/posts/gradle-build-variants-explained/build-variant-preview.png)
+![build variant preview](/images/posts/gradle-build-variants-explained/build-variant-preview.png)
 
 This tells you that you can now release packages for the `alpha` environment.
 
@@ -142,8 +142,8 @@ app
 
 `strings.xml` defines three strings with the same keys but different values. Below are the runtime effects for the `alpha` and `release` environments.
 
-![build alpha](/static/images/posts/gradle-build-variants-explained/build-alpha.png)
-![build release](/static/images/posts/gradle-build-variants-explained/build-release.png)
+![build alpha](/images/posts/gradle-build-variants-explained/build-alpha.png)
+![build release](/images/posts/gradle-build-variants-explained/build-release.png)
 
 Of course, besides regular resources, code can also be configured. Simply add a `java` directory based on the above directory structure, then add files in the corresponding package—just like writing them directly in the package under the `main` directory. The only difference is that these classes only take effect when the target build type matches the directory.
 

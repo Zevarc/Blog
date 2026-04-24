@@ -3,7 +3,6 @@ title: Gradle中产物关系解析
 description: Gradle项目中配置Build types，Product flavors，Build variants可能遇到的问题以及解决方法
 date:  2023-09-03
 updated: 2026-04-06
-author: "hongui"
 tags: [Gradle,项目]
 draft: false
 ---
@@ -100,7 +99,7 @@ android {
 
 当你创建完后，Android Studio会在文件标签页下方提示你项目需要同步，点击`Sync Now`按钮，同步完成后，你可以在侧边工具中中找到`Build Variants`工具窗口，这时候，`Active Build Variant`中就会多一个`alpha`的构建选项
 
-![build variant preview](/static/images/posts/gradle-build-variants-explained/build-variant-preview.png)
+![build variant preview](/images/posts/gradle-build-variants-explained/build-variant-preview.png)
 
 这就是告诉你，你可以发布`alpha`环境的包了。
 
@@ -137,8 +136,8 @@ app
 
 `strings.xml`定义了三个键相同，值不同的字符串资源，下面就是`alpha`,`release`环境下的运行效果。
 
-![build alpha](/static/images/posts/gradle-build-variants-explained/build-alpha.png) 
-![build release](/static/images/posts/gradle-build-variants-explained/build-release.png)
+![build alpha](/images/posts/gradle-build-variants-explained/build-alpha.png) 
+![build release](/images/posts/gradle-build-variants-explained/build-release.png)
 
 当然，除了这些普通资源，代码也可以配置，只需要在上面目录结构的基础上，加上`java`目录，然后在对应包下添加文件，就好像直接写在`main`目录下的包中一样，只不过这些类只在目标构建类型和目录匹配时才会生效。
 
