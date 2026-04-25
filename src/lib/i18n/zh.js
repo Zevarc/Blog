@@ -2,7 +2,7 @@
 export const zh = {
   language: 'English',
   hero: {
-    title: 'Zevarc',
+    title: 'zevarc',
     phonetic: '/ˈziː.vɑːrk/',
     etymology: {
       zero: 'Zero（零）',
@@ -63,15 +63,15 @@ export const zh = {
   },
   seo: {
     home: {
-      title: 'Zevarc - 从0开始的曲折演进之路',
-      description: 'Zevarc 是关于问题拆解和逐步演进 的个人品牌。分享 Android、C++、Python、前端及浏览器插件等技术。'
+      title: 'zevarc - 从0开始的曲折演进之路',
+      description: 'zevarc 是关于问题拆解和逐步演进 的个人品牌。分享 Android、C++、Python、前端及浏览器插件等技术。'
     },
     posts: {
-      title: '博客 - Zevarc',
+      title: '博客 - zevarc',
       description: '关于 Android、C++、Python、前端开发等技术文章和见解。'
     },
     projects: {
-      title: '项目 - Zevarc',
+      title: '项目 - zevarc',
       description: '各种项目'
     }
   }

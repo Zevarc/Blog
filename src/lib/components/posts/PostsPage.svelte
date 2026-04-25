@@ -6,7 +6,7 @@
   import NavButton from '$lib/components/NavButton.svelte';
   import BlogFrame from './PostFrame.svelte';
   import { Scene, HarborBackground, Moon } from '$lib/components/visuals/index.js';
-  import { getDictionary } from '$lib/i18n/index.js';
+  import { getDictionary, getLink } from '$lib/i18n/index.js';
 
   const { lang = 'en', posts, notes } = $props();
 
@@ -32,8 +32,10 @@
 <svelte:head>
   <title>{t.seo.posts.title}</title>
   <meta name="description" content={t.seo.posts.description} />
+  <link rel="canonical" href={`https://zevarc.com/${getLink(lang, 'posts')}`} />
   <link rel="alternate" hreflang="en" href="https://zevarc.com/posts" />
-  <link rel="alternate" hreflang="zh-Hans" href="https://zevarc.com/zh/posts" />
+  <link rel="alternate" hreflang="zh" href="https://zevarc.com/zh/posts" />
+  <link rel="alternate" hreflang="x-default" href="https://zevarc.com/posts" />
 </svelte:head>
 
 <div class="page">

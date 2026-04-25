@@ -32,8 +32,10 @@
 <svelte:head>
   <title>{t.seo.projects.title}</title>
   <meta name="description" content={t.seo.projects.description} />
+  <link rel="canonical" href={`https://zevarc.com/${getLink(lang, 'projects')}`} />
   <link rel="alternate" hreflang="en" href="https://zevarc.com/projects" />
-  <link rel="alternate" hreflang="zh-Hans" href="https://zevarc.com/zh/projects" />
+  <link rel="alternate" hreflang="zh" href="https://zevarc.com/zh/projects" />
+  <link rel="alternate" hreflang="x-default" href="https://zevarc.com/projects" />
 </svelte:head>
 
 <div class="page">

@@ -1,11 +1,16 @@
 <script>
     const { post } = $props();
     const json = JSON.stringify(post.jsonLd);
+    const url=`${post.isNotes?"posts/notes":"posts"}/${post.slug}`
 </script>
 
 <svelte:head>
-    <title>{post.title}</title>
+    <title>{post.title} - zevarc</title>
     <meta name="description" content={post.description} />
+    <link rel="canonical" href={`https://zevarc.com/${post.url}`} />
+    <link rel="alternate" hreflang="en" href={`https://zevarc.com/${url}`} />
+    <link rel="alternate" hreflang="zh" href={`https://zevarc.com/zh/${url}`}/>
+    <link rel="alternate" hreflang="x-default" href={`https://zevarc.com/${url}`}/>
     {@html `<script type="application/ld+json">${json}</script>`}
 </svelte:head>
 

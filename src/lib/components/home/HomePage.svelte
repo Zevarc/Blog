@@ -104,8 +104,10 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <!-- 多语言 SEO -->
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <link rel="canonical" href={'en'==lang?'https://zevarc.com/':'https://zevarc.com/zh'} />
   <link rel="alternate" hreflang="en" href="https://zevarc.com/" />
-  <link rel="alternate" hreflang="zh-Hans" href="https://zevarc.com/zh" />
+  <link rel="alternate" hreflang="zh" href="https://zevarc.com/zh" />
   <link rel="alternate" hreflang="x-default" href="https://zevarc.com/" />
 </svelte:head>
 

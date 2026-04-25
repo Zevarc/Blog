@@ -1,7 +1,7 @@
 import type { Post, PostRecord } from './types'
 import { getLink } from '$lib/i18n';
 
-function handleContent(modules: Record<string, PostRecord>, lang: string | undefined = undefined, basePath: string): Post[] {
+function handleContent(modules: Record<string, PostRecord>, lang: string | undefined = undefined, basePath: string,isNotes:boolean): Post[] {
   const posts: Post[] = []
   for (const path in modules) {
     const post = modules[path]
@@ -20,7 +20,7 @@ function handleContent(modules: Record<string, PostRecord>, lang: string | undef
       }
 
     }
-    const content = { component: post.default, ...metadata, slug, lng: fileLang, url: `${basePath}/${slug}`, jsonLd }
+    const content = { component: post.default, ...metadata, slug, lng: fileLang, url: `${basePath}/${slug}`, jsonLd,isNotes }
     !content.draft && (!lang || fileLang === lang) && posts.push(content)
   }
   posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -28,11 +28,11 @@ function handleContent(modules: Record<string, PostRecord>, lang: string | undef
 }
 
 function loadPosts(lang: string | undefined = undefined): Post[] {
-  return handleContent(import.meta.glob('/src/content/posts/*.md', { eager: true }), lang, getLink('posts', lang));
+  return handleContent(import.meta.glob('/src/content/posts/*.md', { eager: true }), lang, getLink('posts', lang),false);
 }
 
 function loadNotes(lang: string | undefined = undefined): Post[] {
-  return handleContent(import.meta.glob('/src/content/notes/*.md', { eager: true }), lang, getLink('posts/notes', lang));
+  return handleContent(import.meta.glob('/src/content/notes/*.md', { eager: true }), lang, getLink('posts/notes', lang),true);
 }
 
 export { loadPosts, loadNotes };

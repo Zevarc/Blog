@@ -2,7 +2,7 @@
 export const en = {
   language: '中文',
   hero: {
-    title: 'Zevarc',
+    title: 'zevarc',
     phonetic: '/ˈziː.vɑːrk/',
     etymology: {
       zero: 'Zero',
@@ -10,7 +10,7 @@ export const en = {
       arc: 'Arc'
     },
     slogan: 'Start from zero, evolve through twists and turns, and grow with joy',
-    description: 'Zevarc explores problem decomposition and iterative evolution, sharing practical insights on Android, C++, Python, and modern frontend development.',
+    description: 'zevarc explores problem decomposition and iterative evolution, sharing practical insights on Android, C++, Python, and modern frontend development.',
     topics: ['Android', 'C++', 'Python', 'Frontend', 'Browser Extensions'],
     cta: 'Explore'
   },
@@ -63,15 +63,15 @@ export const en = {
   },
   seo: {
     home: {
-      title: 'Zevarc - A Journey of Evolution from Zero',
-      description: 'Zevarc is a personal brand centered on problem decomposition and iterative evolution, sharing insights on Android, C++, Python, frontend development, and browser extensions.'
+      title: 'zevarc - A Journey of Evolution from Zero',
+      description: 'zevarc is a personal brand centered on problem decomposition and iterative evolution, sharing insights on Android, C++, Python, frontend development, and browser extensions.'
     },
     posts: {
-      title: 'Posts - Zevarc',
+      title: 'Posts - zevarc',
       description: 'Technical articles and insights on Android, C++, Python, and frontend development.'
     },
     projects: {
-      title: 'Projects - Zevarc',
+      title: 'Projects - zevarc',
       description: 'A collection of projects'
     }
   }
