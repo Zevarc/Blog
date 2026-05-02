@@ -176,50 +176,6 @@
     margin-bottom: 20px;
   }
   
-  .label {
-    display: inline-block;
-    padding: 4px 12px;
-    background: #38bdf826;
-    color: #38bdf8;
-    font-size: .75rem;
-    font-weight: 600;
-    border-radius: 4px;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: .05em;
-  }
-  
-  .problem-section p,
-  .solution-section p {
-    color: #D1D5DB;
-    margin: 0;
-    line-height: 1.6;
-  }
-  
-  .decomposition-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  
-  .decomposition-list li {
-    color: #D1D5DB;
-    padding-left: 18px;
-    position: relative;
-    line-height: 1.5;
-    font-size: 0.9rem;
-  }
-  
-  .decomposition-list li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: #F59E0B;
-  }
-  
   .project-footer {
     padding-top: 16px;
     border-top: 1px solid rgba(31, 41, 55, 0.5);

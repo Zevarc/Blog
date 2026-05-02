@@ -32,29 +32,42 @@ export const en = {
     next: 'Go home',
     projects: [
       {
-      id: 1,
-      title: 'FastAir',
-      year: '2017',
-      description: 'An Android app for fast file transfer without an internet connection',
-      image: '/projects/fastair.png',
-      tags: [
-        'Android',
-        'WiFi P2P'
-      ],
-      link: 'https://github.com/zevarc/fastair'},
+        id: 1,
+        title: 'FastAir',
+        year: '2017',
+        description: 'An Android app for fast file transfer without an internet connection',
+        image: '/projects/fastair.png',
+        tags: [
+          'Android',
+          'WiFi P2P'
+        ],
+        link: 'https://github.com/zevarc/fastair'
+      },
       {
-      id: 2,
-      title: 'GitHit',
-      year: '2026',
-      description: 'Discover Random GitHub Repositories & Developers',
-      image: '/projects/fastair.png',
-      tags: [
-        'GitHub',
-        'GitHit'
-      ],
-      website: 'https://githit.zevarc.com'
-    }
-  ]
+        id: 2,
+        title: 'GitHit',
+        year: '2026',
+        description: 'Discover Random GitHub Repositories & Developers',
+        image: '/projects/githit.svg',
+        tags: [
+          'GitHub',
+          'GitHit'
+        ],
+        website: 'https://githit.zevarc.com'
+      },
+      {
+        id: 3,
+        title: 'MathAudio',
+        year: '2026',
+        description: 'Math is more than just visuals—it has a sound, too. Let’s tune in and listen to the voice of mathematics',
+        image: '/projects/mathaudio.svg',
+        tags: [
+          'Math',
+          'Audio'
+        ],
+        website: 'https://mathaudio.zevarc.com'
+      }
+    ]
   },
   footer: {
     title: 'Progress Brings Me Joy',

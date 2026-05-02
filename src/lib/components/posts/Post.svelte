@@ -1,7 +1,7 @@
 <script>
     const { post } = $props();
-    const json = JSON.stringify(post.jsonLd);
-    const url=`${post.isNotes?"posts/notes":"posts"}/${post.slug}`
+    const json = $derived(JSON.stringify(post.jsonLd));
+    const url=$derived(`${post.isNotes?"posts/notes":"posts"}/${post.slug}`)
 </script>
 
 <svelte:head>

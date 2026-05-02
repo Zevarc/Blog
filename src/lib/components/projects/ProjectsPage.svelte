@@ -13,7 +13,7 @@
   let t = $derived(getDictionary(lang));
   let visible = $state(false);
 
-  const nextPath = "en"===lang?"/":"/zh";
+  const nextPath = $derived("en"===lang?"/":"/zh");
 
   onMount(() => {
     const timer = setTimeout(() => {
@@ -107,11 +107,6 @@
       transparent 70%
     );
     border-radius: 50%;
-  }
-
-  .sea-slot {
-    position: absolute;
-    inset: 0;
   }
 
   .navigation-section {

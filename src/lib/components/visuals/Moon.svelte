@@ -1,5 +1,5 @@
 <div class="moon">
-        <div class="moon-face" />
+        <div class="moon-face"></div>
       </div>
 
 <style>

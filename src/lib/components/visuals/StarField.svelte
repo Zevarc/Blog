@@ -13,12 +13,12 @@
   } = $props();
   
   // 生成星星数据
-  const stars = Array.from({ length: count }, () => ({
+  const stars = $derived(Array.from({ length: count }, () => ({
     x: Math.random() * 100,
     y: Math.random() * 70,
     size: Math.random() * 2 + 1,
     delay: Math.random() * 2
-  }));
+  })));
 </script>
 
 <div class="star-field" style="opacity: {opacity}">

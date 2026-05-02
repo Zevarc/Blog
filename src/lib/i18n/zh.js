@@ -47,12 +47,24 @@ export const zh = {
       title: 'GitHit',
       year: '2026',
       description: '随机探索和发现Github仓库和开发者',
-      image: '/projects/fastair.png',
+      image: '/projects/githit.svg',
       tags: [
         'GitHub',
         'GitHit'
       ],
       website: 'https://githit.zevarc.com'
+    },
+    {
+      id: 3,
+      title: 'MathAudio',
+      year: '2026',
+      description: '数学不仅有图像，还有声音，一起来聆听数学的声音',
+      image: '/projects/mathaudio.svg',
+      tags: [
+        'Math',
+        'Audio'
+      ],
+      website: 'https://mathaudio.zevarc.com'
     }
     ]
   },

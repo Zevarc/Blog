@@ -80,11 +80,6 @@
     background: linear-gradient(to bottom, #0f172a, #1e3a5f, #0c1929);
   }
 
-  .sea-slot {
-    position: absolute;
-    inset: 0;
-  }
-
   .content {
     position: relative;
     z-index: 10;
