@@ -41,7 +41,7 @@ export const en = {
           'Android',
           'WiFi P2P'
         ],
-        link: 'https://github.com/zevarc/fastair'
+        github: 'https://github.com/zevarc/fastair'
       },
       {
         id: 2,
@@ -66,6 +66,19 @@ export const en = {
           'Audio'
         ],
         website: 'https://mathaudio.zevarc.com'
+      },
+      {
+        id: 4,
+        title: 'BoredIsland',
+        year: '2026',
+        description: 'Escape the noise. Drag to explore a quiet, endless ocean, skip stones, watch the fish, and discover hidden islands.',
+        image: '/projects/boredisland.svg',
+        tags: [
+          'Bored Island',
+          'Bored',
+          'Island'
+        ],
+        website: 'https://boredisland.com'
       }
     ]
   },

@@ -41,12 +41,7 @@
           <div class="project-links">
           {#if project.website}
             <a href={project.website} class="project-link" target="_blank" rel="noopener">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-                <polyline points="15 3 21 3 21 9"/>
-                <line x1="10" y1="14" x2="21" y2="3"/>
-              </svg>
-              Website
+              <img src={project.image} alt="{project.title}"/>
             </a>
             {/if}
             {#if project.github}
@@ -168,6 +163,11 @@
   
   .project-link:hover {
     color: #F59E0B;
+  }
+  
+  img {
+    width: 32px;
+    height: 32px;
   }
   
   .project-body {

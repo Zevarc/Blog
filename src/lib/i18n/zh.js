@@ -40,7 +40,7 @@ export const zh = {
         "Android",
         "WIFI P2P"
       ],
-      "link": "https://github.com/zevarc/fastair",
+      "github": "https://github.com/zevarc/fastair",
     },
     {
       id: 2,
@@ -65,7 +65,20 @@ export const zh = {
         'Audio'
       ],
       website: 'https://mathaudio.zevarc.com'
-    }
+    },
+    {
+        id: 4,
+        title: 'BoredIsland',
+        year: '2026',
+        description: '远离喧嚣，来这里一个安静看鱼游泳，丢石头，画沙画，在沙滩上写字，在无聊中消磨时间，放松身心。',
+        image: '/projects/boredisland.svg',
+        tags: [
+          'Bored Island',
+          'Bored',
+          'Island'
+        ],
+        website: 'https://boredisland.com'
+      }
     ]
   },
   footer: {
