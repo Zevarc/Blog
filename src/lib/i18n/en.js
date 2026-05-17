@@ -57,15 +57,17 @@ export const en = {
       },
       {
         id: 3,
-        title: 'MathAudio',
+        title: 'EqBeat',
         year: '2026',
-        description: 'Math is more than just visuals—it has a sound, too. Let’s tune in and listen to the voice of mathematics',
-        image: '/projects/mathaudio.svg',
+        description: 'Turn Math Equations Into Sound, Feel the Beat',
+        image: '/projects/eqbeat.svg',
         tags: [
           'Math',
-          'Audio'
+          'equations',
+          'Audio',
+          'eqbeat'
         ],
-        website: 'https://mathaudio.zevarc.com'
+        website: 'https://eqbeat.com'
       },
       {
         id: 4,
@@ -79,6 +81,19 @@ export const en = {
           'Island'
         ],
         website: 'https://boredisland.com'
+      },
+      {
+        id: 5,
+        title: 'Loglet',
+        year: '2026',
+        description: 'Loglet make Android logcat readable',
+        image: '/projects/loglet.svg',
+        tags: [
+          'Logcat',
+          'Loglet',
+        ],
+        website: 'https://loglet.zevarc.com',
+        github: 'https://github.com/zevarc/loglet'
       }
     ]
   },

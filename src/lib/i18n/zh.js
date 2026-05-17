@@ -56,28 +56,43 @@ export const zh = {
     },
     {
       id: 3,
-      title: 'MathAudio',
+      title: 'eqbeat',
       year: '2026',
       description: '数学不仅有图像，还有声音，一起来聆听数学的声音',
-      image: '/projects/mathaudio.svg',
+      image: '/projects/eqbeat.svg',
       tags: [
         'Math',
-        'Audio'
+        'equations',
+        'Audio',
+        'eqbeat'
       ],
-      website: 'https://mathaudio.zevarc.com'
+      website: 'https://eqbeat.com'
     },
     {
-        id: 4,
-        title: 'BoredIsland',
+      id: 4,
+      title: 'BoredIsland',
+      year: '2026',
+      description: '远离喧嚣，来这里一个安静看鱼游泳，丢石头，画沙画，在沙滩上写字，在无聊中消磨时间，放松身心。',
+      image: '/projects/boredisland.svg',
+      tags: [
+        'Bored Island',
+        'Bored',
+        'Island'
+      ],
+      website: 'https://boredisland.com'
+    },
+    {
+        id: 5,
+        title: 'Loglet',
         year: '2026',
-        description: '远离喧嚣，来这里一个安静看鱼游泳，丢石头，画沙画，在沙滩上写字，在无聊中消磨时间，放松身心。',
-        image: '/projects/boredisland.svg',
+        description: 'Loglet 让 Android logcat 阅读更友好',
+        image: '/projects/loglet.svg',
         tags: [
-          'Bored Island',
-          'Bored',
-          'Island'
+          'Logcat',
+          'Loglet',
         ],
-        website: 'https://boredisland.com'
+        website: 'https://loglet.zevarc.com',
+        github: 'https://github.com/zevarc/loglet'
       }
     ]
   },
